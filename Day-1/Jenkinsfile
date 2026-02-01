@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Ajaypatel001/Terraform7pm.git'
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                dir('Day-2statefile') {
+                    sh 'terraform init'
+                }
+            }
+        }
+        
+         stage('Terraform plan') {
+            steps {
+                dir('Day-2statefile') {
+                    sh 'terraform plan'
+                }
+            }
+        }
+        
+         stage('Terraform apply') {
+            steps {
+                dir('Day-2statefile') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+
+    }
+}
