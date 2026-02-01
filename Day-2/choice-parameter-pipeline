@@ -14,7 +14,7 @@ pipeline {
                git branch: 'main', url: 'https://github.com/bhawnavishwakarma007/Terraform_Practice.git'
             }
         }
-        stage('terraform init') {
+        stage('terraform init') {ls
             steps {
                 dir('Day-1') {
             sh 'terraform init'
