@@ -4,7 +4,9 @@ sudo yum install git -y
 # Install Java (Required for Jenkins)
 
 sudo yum install java-17-amazon-corretto.x86_64 -y
+
  *********** java 21
+ 
 sudo yum install java-21-amazon-corretto -y
 
 java -version
